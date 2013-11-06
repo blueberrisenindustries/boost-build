@@ -3,14 +3,14 @@ cmake_minimum_required(VERSION 2.8)
 project(android-boost)
 
 #find patched boost directory
-set(boost_root ${CMAKE_CURRENT_SOURCE_DIR}/boost_1_45_0 CACHE PATH 
-    "Boost 1.45.0 patched for android")
+set(boost_root ${CMAKE_CURRENT_SOURCE_DIR}/boost_1_47_0 CACHE PATH 
+    "Boost 1.47.0 patched for android")
 
 if(NOT EXISTS ${boost_root})
 message(FATAL_ERROR
   "${boost_root} does not exist!
     Please run ${CMAKE_CURRENT_SOURCE_DIR}/get_boost.sh to get a patched copy of
-    boost 1.45.0
+    boost 1.47.0
     ")
 endif()
 
@@ -71,4 +71,3 @@ install(TARGETS boost_regex DESTINATION ${CMAKE_INSTALL_PREFIX}/lib)
 install(TARGETS boost_signals DESTINATION ${CMAKE_INSTALL_PREFIX}/lib)
 install(TARGETS boost_thread DESTINATION ${CMAKE_INSTALL_PREFIX}/lib)
 install(TARGETS boost_date_time DESTINATION ${CMAKE_INSTALL_PREFIX}/lib)
-
